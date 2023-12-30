@@ -14,12 +14,11 @@ export async function generateStaticParams() {
 export default async function Page({ params }){
     const database = await getDatabase(databaseId);
 
-
     return(<>
         <ol>
         {database.map((post) => (
             <li key={post.id}>
-            <Link href={`/${post.id}`}>
+            <Link href={`/projects/${post.id}`}>
                 <Text text={post.properties.Name.title} />
             </Link>
             </li>
