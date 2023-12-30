@@ -3,7 +3,7 @@ import NavLink from '@/components/navlink'
 
 const links = [
     {label: 'Home', href: '/'},
-    {label: 'About', href: '/about'},
+    {label: 'Projects', href: '/projects'},
     {label: 'Contact', href: '/contact'},
 ]
 
