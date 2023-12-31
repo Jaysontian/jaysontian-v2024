@@ -6,6 +6,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  mode: 'jit',
   theme: {
     extend: {
       backgroundColor: {
@@ -30,6 +31,9 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      scale: {
+        '105': '1.01',
+      }
     }
   },
   plugins: [],

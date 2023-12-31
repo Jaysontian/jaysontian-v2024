@@ -13,7 +13,7 @@ export default function NavLink({href, children} : NavLinkProps) {
     const pathname = `/${usePathname().split("/")[1]}`;
     const active = pathname === href;
 
-    const style = active ? "px-4 py-1 rounded-lg bg-linkHover transition border border-stone-200/75" : 'px-4 py-1 rounded-lg border-2 border-white/0 hover:bg-linkHover transition';
+    const style = active ? "px-4 py-1.5 rounded-xl bg-linkHover transition text-black" : 'px-4 py-1.5 rounded-xl hover:bg-linkHover transition';
 
     return(
         <Link className={style}  href={href}>{children}</Link>

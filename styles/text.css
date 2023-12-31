@@ -1,3 +1,26 @@
+
+
+
+h2 {
+  font-size:16pt;
+  font-weight:600;
+  padding: 1rem 0rem;
+}
+
+.proj-page p, .proj-page li {
+  font-size: 12pt;
+  font-weight: 400;
+  margin: 1rem auto;
+}
+
+.proj-page figure, .proj-page img {
+  width:85%;
+  min-width: 700px;
+  max-width:1200px;
+  margin: 2rem auto;
+  border-radius:8px;
+}
+
 .bold {
   font-weight: bold;
 }

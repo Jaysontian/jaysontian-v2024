@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-color: rgb(252, 251, 249);
-  --headerBackground: rgba(252, 251, 249, 0.73);
+  --background-color: rgb(255, 255, 255);
+  --headerBackground: rgba(255, 255, 255, 0.73);
   --link-hover: rgba(232, 227, 224, 0.439); /* bg-linkHover class */ 
 }
 
@@ -22,13 +22,12 @@ body {
   background: var(--background-color);
 }
 
-
 main {
   margin: 0 auto;
   max-width: none;
 }
 
-main > :not(img, video) {
+main > :not(img, video, figure) {
   max-width: 700px;
   width:100%;
   margin-left: auto;

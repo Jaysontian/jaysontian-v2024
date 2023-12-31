@@ -10,53 +10,61 @@ import layer4 from "/assets/layer4.webp";
 import layer5 from "/assets/layer5.webp";
 
 import { motion } from 'framer-motion'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 export default function Galaxy() {
-    const [blur, setBlur] = useState('');
+    const blurCache = typeof window !== 'undefined' ? localStorage.getItem('blur') : null;
+    const [blur, setBlur] = useState(blurCache ? blurCache : '');
 
-    const onScroll = useCallback(event => {
+    const blurGalaxy = () => {
         const { pageYOffset, scrollY } = window;
-        console.log("yOffset", pageYOffset, "scrollY", scrollY);
+
         if (scrollY != 0){
             setBlur('blurred');
+            localStorage.setItem('blur', 'blurred');
         }
         else {
             setBlur('');
+            localStorage.setItem('blur', '');
         }
+    }
 
+    const onScroll = useCallback((event : any) => {
+        blurGalaxy();
     }, []);
 
     useEffect(() => {
         //add eventlistener to window
         window.addEventListener("scroll", onScroll, { passive: true });
+        blurGalaxy();
+
         // remove event on unmount to prevent a memory leak with the cleanup
         return () => {
         window.removeEventListener("scroll", onScroll, { passive: true });
-        }
+        };
     }, []);
 
+    // Parallax Implementation
     if (typeof document !== `undefined`) {
-    document.addEventListener("mousemove", parallax);
-    document.addEventListener("mouseleave", restore);
+        const parallax = (e : any) => {
+            this.querySelectorAll(".layer").forEach((layer : any) => {
+            var speed = layer.getAttribute("data-speed");
+            var x = (window.innerWidth - e.pageX * speed) / 100;
+            var y = (window.innerHeight - e.pageY * speed) / 100;
+            //console.log(x, y)
+            layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+        
+        const restore = () => {
+            this.querySelectorAll(".layer").forEach((layer : any) => {
+            layer.transition = "transform 0.6s ease-in-out";
+            layer.style.transform = `translateX(0px) translateY(0px)`;
+            });
+        }
 
-    function parallax(e) {
-        this.querySelectorAll(".layer").forEach((layer) => {
-        var speed = layer.getAttribute("data-speed");
-        var x = (window.innerWidth - e.pageX * speed) / 100;
-        var y = (window.innerHeight - e.pageY * speed) / 100;
-        //console.log(x, y)
-
-        layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-    }
-    
-    function restore() {
-        this.querySelectorAll(".layer").forEach((layer) => {
-        layer.transition = "transform 0.6s ease-in-out";
-        layer.style.transform = `translateX(0px) translateY(0px)`;
-        });
-    }
+        document.addEventListener("mousemove", parallax);
+        document.addEventListener("mouseleave", restore);
     }
 
     return(
@@ -78,7 +86,6 @@ export default function Galaxy() {
                     <motion.div initial={false} className="lighten layer">
                         <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
                     </motion.div>
-
                 </div>
             </div>
         </div>

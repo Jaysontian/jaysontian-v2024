@@ -8,7 +8,7 @@ import { Text } from '@/app/projects/[slug]/text'
 const renderBlock = (block) => {
   const { type, id } = block;
   const value = block[type];
-  
+
   switch (type) {
     case "paragraph":
       return (
@@ -64,13 +64,12 @@ const renderBlock = (block) => {
     case "child_page":
       return <p>{value.title}</p>;
     case "image":
-      const src =
-        value.type === "external" ? value.external.url : value.file.url;
-      const caption = value.caption ? value.caption[0].plain_text : "";
+        const src = value.type === "external" ? value.external.url : value.file.url;
+        const caption = value.caption.length != 0 ? value.caption[0].plain_text : "";
       return (
         <figure>
-          <img src={src} alt={caption} />
-          {caption && <figcaption>{caption}</figcaption>}
+          <img src={src} />
+          {/* {caption && <figcaption>{caption}</figcaption>} */}
         </figure>
       );
     default:
@@ -108,16 +107,16 @@ export default async function Page({ params }) {
     if (!page || !blocks) {
         return <div />;
     }
-    return (   
-        <article>
-        <h1>
-            <Text text={page.properties.Name.title} />
-        </h1>
-        <section>
+    return (
+        <main className="proj-page">
+            <div className="my-10">
+                <h1 className="text-2xl font-semibold">
+                    <Text text={page.properties.Name.title} />
+                </h1>
+            </div>
             {blocks.map((block) => (
                 <Fragment key={block.id}>{renderBlock(block)}</Fragment>
             ))}
-        </section>
-        </article>
+        </main>
     );
 }
