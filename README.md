@@ -12,4 +12,4 @@ My personal website / portfolio – v2024
 - Framer Motion
 - Notion API [@notionhq/client](https://api.notion.com)
 ## Preview
-![https://i.imgur.com/Sr6b9qF.jpg](preview image)
+![](https://i.imgur.com/Sr6b9qF.jpg)
