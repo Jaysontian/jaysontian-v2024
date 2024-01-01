@@ -13,7 +13,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Galaxy() {
-    const blurCache = typeof window !== 'undefined' ? localStorage.getItem('blur') : null;
+    const blurCache = window ? localStorage.getItem('blur') : null;
     const [blur, setBlur] = useState(blurCache ? blurCache : '');
 
     const blurGalaxy = () => {
@@ -47,7 +47,7 @@ export default function Galaxy() {
     // Parallax Implementation
     if (typeof document !== `undefined`) {
         const parallax = (e : any) => {
-            this.querySelectorAll(".layer").forEach((layer : any) => {
+            document.querySelectorAll(".layer").forEach((layer : any) => {
             var speed = layer.getAttribute("data-speed");
             var x = (window.innerWidth - e.pageX * speed) / 100;
             var y = (window.innerHeight - e.pageY * speed) / 100;
@@ -57,7 +57,7 @@ export default function Galaxy() {
         }
         
         const restore = () => {
-            this.querySelectorAll(".layer").forEach((layer : any) => {
+            document.querySelectorAll(".layer").forEach((layer : any) => {
             layer.transition = "transform 0.6s ease-in-out";
             layer.style.transform = `translateX(0px) translateY(0px)`;
             });

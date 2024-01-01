@@ -1,7 +1,10 @@
 
 import Image from 'next/image'
+ 
+// Parent: app/page.tsx (index)
+// Looks like a safari window for rendering featured projects
 
-export default function Project(props){
+export default function Window(props){
     return(
         <div className="flex flex-col w-full gap-10">
             <div className="w-full h-96 bg-white/60 rounded-lg border border-stone-300/75 shadow-xl grayscale hover:grayscale-0 hover:scale-105 transition overflow-hidden">

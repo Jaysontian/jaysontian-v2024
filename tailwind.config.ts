@@ -18,10 +18,9 @@ const config: Config = {
         linkHover: "var(--link-hover)",
       },
       fontSize: {
-        xs: '0.9rem',
-        sm: '0.95rem',
-        base: '1rem',
-        xl: '1.25rem',
+        sm: '10pt',
+        base: '11pt',
+        md: '13pt',
       },
       textColor: {
         primary: "var(--color-text-primary)",

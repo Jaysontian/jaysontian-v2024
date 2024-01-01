@@ -1,16 +1,17 @@
 
 
 
-h2 {
-  font-size:16pt;
+.proj-page h2 {
+  font-size:12pt;
   font-weight:600;
-  padding: 1rem 0rem;
+  padding-top:0.6rem;
+  padding-bottom:0.2rem;
 }
 
 .proj-page p, .proj-page li {
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: 400;
-  margin: 1rem auto;
+  margin: 0.6rem auto;
 }
 
 .proj-page figure, .proj-page img {
