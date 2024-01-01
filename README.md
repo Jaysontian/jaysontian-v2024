@@ -11,3 +11,7 @@ Inspirations:
 - Typescript
 - Tailwind CSS
 - Vercel
+## Libraries
+- Tabler Icons [@tabler/icons-react](https://tabler.io/icons)
+- Framer Motion
+- Notion API [@notionhq/client](https://api.notion.com)
