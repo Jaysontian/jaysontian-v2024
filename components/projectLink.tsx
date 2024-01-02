@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Text } from "@/app/projects/[slug]/text";
+import { Text } from "@/app/projects/[id]/text";
 import { IconArrowUpRight } from '@tabler/icons-react';
 
 export default function projectLink(props : any){

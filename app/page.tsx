@@ -2,19 +2,11 @@ import { getDatabase } from '@/lib/notion'
 import Galaxy from '@/components/galaxy'
 import Project from '@/components/window'
 
-import Matcha from '@/assets/matcha.png'
-
-
 // Home page
+let databaseId:string = process.env.NOTION_DATABASE_ID ?? '';
 
-const sampleProjects = [
-  {title: "Skilldeck.me", desc: "An all-in-one CRM tool for freelance designers"},
-  {title: "Matcha", desc: "Learning how to update stuff here", img: Matcha},
-  {title: "Cosmos", desc: "Learning how to update stuff here"},
-]
-
-export default async function Home() {
-  const data = await getDatabase(process.env.NOTION_DATABASE_ID, 'Featured');
+export default async function Page() {
+  const data = await getDatabase(databaseId, 'Featured');
   //console.log(data[0]);
   return (
     <>
@@ -25,7 +17,7 @@ export default async function Home() {
 
         <div className='flex flex-col gap-10 mt-60'>
           <h2 className="text-center">- featured work -</h2>
-          {data.map((project)=>(
+          {data.map((project : any)=>(
             <Project 
               name={project.properties.Name.title[0].plain_text} 
               desc={project.properties.Desc.rich_text[0].plain_text}

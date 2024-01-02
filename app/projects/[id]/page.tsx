@@ -1,11 +1,17 @@
 
 import Link from "next/link";
 import { Fragment } from "react";
-import { getDatabase, getPage, getBlocks } from "@/lib/notion.js";
-import { databaseId } from "@/app/projects/page";
-import { Text } from '@/app/projects/[slug]/text'
+import { getDatabase, getPage, getBlocks } from "@/lib/notion";
+import { Text } from '@/app/projects/[id]/text'
 
-const renderBlock = (block) => {
+const databaseId = process.env.NOTION_DATABASE_ID
+
+export async function generateStaticParams() {
+  const database = await getDatabase(databaseId, '');
+  return database.map((post) => ({id: post.id}))
+}
+
+const renderBlock = (block : any) => {
   const { type, id } = block;
   const value = block[type];
 
@@ -56,7 +62,7 @@ const renderBlock = (block) => {
           <summary>
             <Text text={value.rich_text} />
           </summary>
-          {value.children?.map((block) => (
+          {value.children?.map((block : any) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </details>
@@ -79,23 +85,24 @@ const renderBlock = (block) => {
   }
 };
 
-export default async function Page({ params }) {
-    const id = params.slug;
 
+export default async function Page({ params } : {params: {id : string}}) {
+    const id = params.id;
+    console.log('statically generated page: ', id);
     const page = await getPage(id);
     const blocks = await getBlocks(id);
 
     const childBlocks = await Promise.all(
         blocks
-        .filter((block) => block.has_children)
-        .map(async (block) => {
+        .filter((block : any) => block.has_children)
+        .map(async (block : any) => {
             return {
             id: block.id,
             children: await getBlocks(block.id),
             };
         })
     );
-    const blocksWithChildren = blocks.map((block) => {
+    const blocksWithChildren = blocks.map((block : any) => {
         if (block.has_children && !block[block.type].children) {
             block[block.type]["children"] = childBlocks.find(
                 (x) => x.id === block.id

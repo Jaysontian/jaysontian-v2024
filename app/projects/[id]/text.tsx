@@ -1,5 +1,5 @@
 
-import styles from '@/styles/text.css'
+import styles from '../../../styles/'
 
 export const Text = ({ text }) => {
   if (!text) {
