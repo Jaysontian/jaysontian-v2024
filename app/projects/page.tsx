@@ -11,7 +11,7 @@ export default async function Page({ params } : { params : any}){
 
     return(<>
         <main className='py-6'>
-            <h2 className="text-center">work</h2>
+            <h2 className="text-center">Work</h2>
             <p className="text-sm/5">I am currently working on a side venture called Nebulo along with my studies. In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
             <ol className="my-4 flex flex-col hover:text-stone-400 transition">
                 {works.map((post) => {
@@ -25,7 +25,7 @@ export default async function Page({ params } : { params : any}){
                     )
                 })}
             </ol>
-            <h2 className="text-center mt-8">projects</h2>
+            <h2 className="text-center mt-8">Projects</h2>
             <p className="text-sm/5">I enjoy hacking on the side.</p>
             <ol className="my-4 flex flex-col hover:text-stone-400 transition">
                 {projects.map((post) => {

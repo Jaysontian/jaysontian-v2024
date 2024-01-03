@@ -1,6 +1,6 @@
 
 
-import styles from '@/styles/blocks.css'
+import styles from '@/styles/page.css'
 
 export const Text = ({ text } : { text: any}) => {
   if (!text) {

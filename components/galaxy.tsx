@@ -13,8 +13,17 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Galaxy() {
-    const blurCache = window ? localStorage.getItem('blur') : null;
-    const [blur, setBlur] = useState(blurCache ? blurCache : '');
+    //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
+    const [blur, setBlur] = useState<String | null>('');
+    useEffect(() => {
+        const blurCache = localStorage.getItem('blur') ? localStorage.getItem('blur') : '';
+        setBlur(blurCache);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        blurGalaxy();
+        return () => {
+            window.removeEventListener("scroll", onScroll, { passive: true });
+        };
+    }, []);
 
     const blurGalaxy = () => {
         const { pageYOffset, scrollY } = window;
@@ -31,17 +40,6 @@ export default function Galaxy() {
 
     const onScroll = useCallback((event : any) => {
         blurGalaxy();
-    }, []);
-
-    useEffect(() => {
-        //add eventlistener to window
-        window.addEventListener("scroll", onScroll, { passive: true });
-        blurGalaxy();
-
-        // remove event on unmount to prevent a memory leak with the cleanup
-        return () => {
-        window.removeEventListener("scroll", onScroll, { passive: true });
-        };
     }, []);
 
     // Parallax Implementation
@@ -62,7 +60,6 @@ export default function Galaxy() {
             layer.style.transform = `translateX(0px) translateY(0px)`;
             });
         }
-
         document.addEventListener("mousemove", parallax);
         document.addEventListener("mouseleave", restore);
     }
