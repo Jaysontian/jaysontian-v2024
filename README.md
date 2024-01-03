@@ -9,9 +9,9 @@ My personal website / portfolio – v2024
 - Vercel
 ## Libraries
 - Tabler Icons [@tabler/icons-react](https://tabler.io/icons)
-- Framer Motion [https://www.framer.com/motion/]
+- Framer Motion [docs](https://www.framer.com/motion/)
 - Notion API [@notionhq/client](https://api.notion.com)
-- Embla Carousel [https://github.com/davidjerleke/embla-carousel]
-- CLSX [https://github.com/lukeed/clsx]
+- Embla Carousel [@github/embla](https://github.com/davidjerleke/embla-carousel)
+- CLSX [@github/clsx](https://github.com/lukeed/clsx)
 ## Preview
 ![](https://i.imgur.com/Sr6b9qF.jpg)
