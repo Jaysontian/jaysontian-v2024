@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/header'
 const inter = Inter({ subsets: ['latin'] })
+import { Fragment } from "react"
 
 export const metadata: Metadata = {
   title: 'Jayson Tian',

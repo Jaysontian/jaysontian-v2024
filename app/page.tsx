@@ -1,6 +1,6 @@
 import { getDatabase } from '@/lib/notion'
 import Galaxy from '@/components/galaxy'
-import Project from '@/components/window'
+import Window from '@/components/window'
 
 // Home page
 let databaseId:string = process.env.NOTION_DATABASE_ID ?? '';
@@ -17,15 +17,17 @@ export default async function Page() {
 
         <div className='flex flex-col gap-10 mt-60'>
           <h2 className="text-center">- featured work -</h2>
-          {data.map((project : any)=>(
-            <Project 
+          {data.map((project : any)=>{
+            console.log(project.properties.URL.url);
+            return (
+            <Window 
               name={project.properties.Name.title[0].plain_text} 
               desc={project.properties.Desc.rich_text[0].plain_text}
               url={project.properties.URL.url}
               href={`/projects/${project.id}`}
               img={project.properties.Image.url}
             />
-          ))}
+          )})}
         </div>
         <div className="mb-60"></div>
       </main>

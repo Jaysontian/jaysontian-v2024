@@ -1,7 +1,8 @@
 
-import styles from '../../../styles/'
 
-export const Text = ({ text }) => {
+import styles from '@/styles/blocks.css'
+
+export const Text = ({ text } : { text: any}) => {
   if (!text) {
     return null;
   }

@@ -2,9 +2,9 @@ import ProjectLink from '@/components/projectLink'
 import { getDatabase } from "@/lib/notion";
 
 
-const databaseId = process.env.NOTION_DATABASE_ID
+const databaseId = process.env.NOTION_DATABASE_ID!
 
-export default async function Page({ params }){
+export default async function Page({ params } : { params : any}){
     const projects = await getDatabase(databaseId, 'Projects');
     const works = await getDatabase(databaseId, 'Work');
     //console.log(database[0]);
