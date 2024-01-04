@@ -1,9 +1,7 @@
 'use client'
-
 import { motion } from 'framer-motion'
-import { IconSun, IconMoon } from '@tabler/icons-react';
 import NavLink from '@/components/navlink'
-import { useTheme } from 'next-themes'
+import ThemePicker from '@/components/themePicker'
 
 const links = [
     {label: 'home', href: '/'},
@@ -12,7 +10,6 @@ const links = [
 ]
 
 export default function Header() {
-    const { theme, setTheme } = useTheme();
 
     const menu = {
         visible: {
@@ -44,7 +41,7 @@ export default function Header() {
     }
 
     return(
-        <header className="sticky top-0 z-1 main-header backdrop-blur-md bg-header " suppressHydrationWarning>
+        <header className="sticky top-0 z-20 main-header backdrop-blur-md bg-header ">
             <nav className="md:px-2 py-4 max-w-[600px] mx-auto flex justify justify-between items-center">
                 <div></div>
                 <motion.ul 
@@ -63,9 +60,7 @@ export default function Header() {
                         </motion.li>
                     ))}
                 </motion.ul>
-                <motion.div className='cursor-pointer' initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1}} onClick={()=>{setTheme(theme == 'light' ? 'dark' : 'light')}}>
-                    {theme == 'light' ? <IconSun stroke={1.5} size={22} /> : <IconMoon stroke={1.5} size={22} color="white" />}
-                </motion.div>
+                <ThemePicker />
             </nav>
         </header>
     );

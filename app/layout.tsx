@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Providers } from '@/lib/providers'
 import '@/styles/globals.css'
 import Header from '@/components/header'
+import { IconHeartFilled } from '@tabler/icons-react'
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -23,13 +24,16 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <Providers>
-          <body className={inter.className}>
-            <div className='my-12'></div>
-            <Header />
-            {children}
-          </body>
-      </Providers>
+      <body className={inter.className}>
+        <div className='my-12'></div>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
+        <footer className='w-full flex mt-16'>
+          <p className='flex gap-1 text-sm text-prim opacity-50 m-auto my-6 mb-12 items-center'>Designed and built with <IconHeartFilled size={16} /> by Jayson Tian</p>
+        </footer>
+      </body>
     </html>
   )
 }

@@ -6,7 +6,7 @@
 export default function Window(props : any){
     return(
         <div className="flex flex-col w-full gap-10">
-            <div className="w-full h-[500px] bg-maint rounded-lg border border-white/20 shadow-xl transition overflow-hidden">
+            <div className="w-full h-[500px] bg-maint rounded-lg border border-white/20 shadow-xl transition overflow-hidden z-0">
                 <div className="bg-soft100 py-2.5 px-4 flex justify-between items-center">
                     <div className="flex">
                         <div className="w-3 h-3 bg-red-300 rounded-full mr-1.5"></div>

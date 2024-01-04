@@ -1,17 +1,21 @@
 
 
+.proj-page > :not(figure, image, video){
+  max-width:500px;
+}
 
 .proj-page h2 {
-  font-size:12pt;
+  font-size:14pt;
   font-weight:600;
   padding-top:0.6rem;
   padding-bottom:0.2rem;
 }
 
 .proj-page p, .proj-page li {
-  font-size: 10pt;
+  font-size: 11pt;
   font-weight: 400;
-  margin: 0.6rem auto;
+  margin: 1.2rem auto;
+  line-height:23px;
 }
 
 .proj-page figure, .proj-page img {
@@ -20,6 +24,14 @@
   max-width:1200px;
   margin: 2rem auto;
   border-radius:8px;
+}
+
+.proj-page a {
+  color:rgb(51, 113, 221);
+  border-bottom:2px solid rgba(57, 130, 255, 0.687);
+}
+.proj-page a:hover{
+  background-color:rgba(124, 176, 255, 0.27);
 }
 
 .bold {

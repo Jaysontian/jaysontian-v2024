@@ -20,9 +20,9 @@ const config: Config = {
         linkHover: "var(--link-hover)",
       },
       fontSize: {
-        sm: '10pt',
-        base: '11pt',
-        md: '13pt',
+        sm: '11pt',
+        base: '12pt',
+        md: '14pt',
       },
       textColor: {
         prim: "var(--text-prim)",

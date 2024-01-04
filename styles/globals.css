@@ -50,7 +50,7 @@ body {
 main {
   margin: 0 auto;
   max-width: none;
-  padding:0rem 1rem;
+  padding:0rem 0rem;
 }
 
 main > :not(img, video, figure) {

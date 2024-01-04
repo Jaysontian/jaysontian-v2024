@@ -58,7 +58,7 @@ export default function Carousel(props : any){
         <motion.div className='carousel-con' initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{duration: 0.6, delay: 0.5}}>
-            <h2 className="mt-64 text-center">Featured Work</h2>
+            <h2 className="mt-64 text-center text-md">Featured Work</h2>
             <div className="embla" ref={emblaRef}>
                 <motion.div 
                     className="embla__container"
