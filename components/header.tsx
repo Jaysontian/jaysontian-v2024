@@ -1,4 +1,6 @@
+'use client'
 
+import { IconSun } from '@tabler/icons-react';
 import NavLink from '@/components/navlink'
 
 const links = [
@@ -9,7 +11,7 @@ const links = [
 
 export default function Header() {
     return(
-        <header className="sticky top-0 z-10 main-header backdrop-blur-md bg-header ">
+        <header className="sticky top-0 z-1 main-header backdrop-blur-md bg-header ">
             <nav className="md:px-2 py-4 max-w-[600px] mx-auto flex justify justify-between items-center">
                 <div></div>
                 <ul className="flex justify-between gap-4 text-sm">
@@ -19,7 +21,9 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-                <div></div>
+                <div className='cursor-pointer' onClick={()=>{alert('change theme');}}>
+                    <IconSun stroke={1.5} size={22} />
+                </div>
             </nav>
         </header>
     );

@@ -1,8 +1,8 @@
-import ProjectLink from '@/components/projectLink'
+import PageList from '@/components/pageList'
 import { getDatabase } from "@/lib/notion";
 
 
-const databaseId = process.env.NOTION_DATABASE_ID!
+const databaseId = process.env.NOTION_DATABASE_ID!;
 
 export default async function Page({ params } : { params : any}){
     const projects = await getDatabase(databaseId, 'Projects');
@@ -13,32 +13,10 @@ export default async function Page({ params } : { params : any}){
         <main className='py-6'>
             <h2 className="text-center">Work</h2>
             <p className="text-sm/5">I am currently working on a side venture called Nebulo along with my studies. In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
-            <ol className="my-4 flex flex-col hover:text-stone-400 transition">
-                {works.map((post) => {
-                    const desc = post.properties.Desc.rich_text.length > 0 ? post.properties.Desc.rich_text[0].plain_text : null;
-                    const icon = typeof post.icon.external == 'object' ? post.icon.external.url : null;
-                    const emoji = typeof post.icon.emoji === 'string' ? post.icon.emoji : null;
-                    return (
-                        <li key={post.id} className='border-b last:border-b-0'>
-                            <ProjectLink name={post.properties.Name.title} id={post.id} icon={icon} desc={desc} emoji={emoji}/>
-                        </li>
-                    )
-                })}
-            </ol>
+            <PageList db={works} />
             <h2 className="text-center mt-8">Projects</h2>
             <p className="text-sm/5">I enjoy hacking on the side.</p>
-            <ol className="my-4 flex flex-col hover:text-stone-400 transition">
-                {projects.map((post) => {
-                    const desc = post.properties.Desc.rich_text.length > 0 ? post.properties.Desc.rich_text[0].plain_text : null;
-                    const icon = post.icon.type === 'external' ? post.icon.external.url : null;
-                    const emoji = post.icon.type === 'emoji' ? post.icon.emoji : null;
-                    return (
-                        <li key={post.id} className='border-b last:border-b-0'>
-                            <ProjectLink name={post.properties.Name.title} id={post.id} icon={icon} desc={desc} emoji={emoji}/>
-                        </li>
-                    )
-                })}
-            </ol>
+            <PageList db={projects} />
         </main>
     </>)
 }

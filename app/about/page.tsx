@@ -1,12 +1,16 @@
 
-import Image from 'next/image'
 import Macbook from '@/components/macbook'
+import PageList from '@/components/pageList'
+import { getDatabase } from "@/lib/notion";
 
-export default function About(){
+const databaseId = process.env.NOTION_DATABASE_ID!;
+
+export default async function About(){
+    const articles = await getDatabase(databaseId, 'Post');
     return(
-    <main className='pt-4'>
-        <Macbook />
-    </main>
+        <main className='pt-4'>
+            <Macbook />
+            <PageList db={articles} />
+        </main>
     )
-
 }
