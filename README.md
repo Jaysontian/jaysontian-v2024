@@ -14,4 +14,5 @@ My personal website / portfolio – v2024
 - Embla Carousel [@github/embla](https://github.com/davidjerleke/embla-carousel)
 - CLSX [@github/clsx](https://github.com/lukeed/clsx)
 ## Preview
-![](https://i.imgur.com/Sr6b9qF.jpg)
+![](https://i.imgur.com/nBA9Dmw.jpg)
+
