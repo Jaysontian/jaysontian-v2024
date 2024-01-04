@@ -9,7 +9,7 @@ export default function pageList(props : any){
                 const icon = typeof post.icon.external == 'object' ? post.icon.external.url : null;
                 const emoji = typeof post.icon.emoji === 'string' ? post.icon.emoji : null;
                 return (
-                    <li key={post.id} className='border-b border-stone-200/60 last:border-b-0 py-0.5'>
+                    <li key={post.id} className='border-b border-soft100 last:border-b-0 py-1'>
                         <PageLink name={post.properties.Name.title} id={post.id} icon={icon} desc={desc} emoji={emoji}/>
                     </li>
                 )

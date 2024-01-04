@@ -17,8 +17,8 @@ import stickerLinkedin from '@/assets/stickers/linkedin.png'
 
 export default function Macbook() {
     return(
-        <div className="max-w-[750px] h-[400px] bg-gray-100 rounded-lg">
-            <div className='max-w-[450px] h-2/3 m-auto py-10 hover:scale-[105%] transition'>
+        <div className="max-w-[750px] h-[420px] bg-soft100 rounded-lg">
+            <div className='max-w-[450px] h-2/3 m-auto py-12 hover:scale-[105%] transition'>
                 <Image src={MacImg} alt='jaysons macbook' className="w-full h-auto"></Image>
                 <Sticker src={stickerLogic} w={120} h={120} t={320} l={90} text='I use logic for producing music and making experimental soundscapes' />
                 <Sticker src={stickerCoffee} w={80} h={80} t={430} l={200} text='Coffee fanatic here! Blue Bottle Coffee is where I get all my work done' />

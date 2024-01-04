@@ -115,7 +115,7 @@ export default async function Page({ params } : {params: {id : string}}) {
         return <div />;
     }
     return (
-        <main className="proj-page">
+        <main className="proj-page text-prim mb-24">
             <div className="my-10">
                 <h1 className="text-2xl font-semibold">
                     <Text text={page.properties.Name.title} />

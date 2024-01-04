@@ -10,7 +10,7 @@ export default async function Page({ params } : { params : any}){
     //console.log(database[0]);
 
     return(<>
-        <main className='py-6'>
+        <main className='py-6 text-prim'>
             <h2 className="text-center">Work</h2>
             <p className="text-sm/5">I am currently working on a side venture called Nebulo along with my studies. In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
             <PageList db={works} />

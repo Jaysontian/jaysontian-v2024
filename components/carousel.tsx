@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from 'react'
 import '@/styles/carousel.css'
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
 import { flushSync } from 'react-dom'
+import { motion } from "framer-motion"
 
 const TWEEN_FACTOR = 3
 
@@ -54,9 +55,14 @@ export default function Carousel(props : any){
     }, [emblaApi])
     
     return(
-        <>
+        <motion.div className='carousel-con' initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{duration: 0.6, delay: 0.5}}>
+            <h2 className="mt-64 text-center">Featured Work</h2>
             <div className="embla" ref={emblaRef}>
-                <div className="embla__container">
+                <motion.div 
+                    className="embla__container"
+                    >
                     {props.data.map((project : any, index : number)=>(
                         <div className="embla__slide" key={project.id}>
                             <div
@@ -76,12 +82,10 @@ export default function Carousel(props : any){
                             </div>
                         </div>
                     ))}
-                </div>
-                <button className="embla__prev absolute left-12 mt-[-300px]" onClick={scrollPrev}>
-                    <IconArrowLeft />
-                </button>
+                </motion.div>
+                <button className="embla__prev absolute left-12 mt-[-300px]" onClick={scrollPrev}><IconArrowLeft /></button>
                 <button className="embla__next absolute right-12 mt-[-300px]" onClick={scrollNext}><IconArrowRight /></button>
             </div>
-        </>
+        </motion.div>
     )
 }

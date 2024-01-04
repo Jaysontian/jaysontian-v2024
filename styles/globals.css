@@ -6,10 +6,32 @@
   --foreground-rgb: 0, 0, 0;
   --background-color: rgb(255, 255, 255);
   --headerBackground: rgba(255, 255, 255, 0.73);
-  --link-hover: rgba(232, 227, 224, 0.439); /* bg-linkHover class */ 
 
-  --text-primary: rgb(18, 18, 18);
-  --text-primary-soft: rgb(51, 51, 51);
+  --bg-main: rgb(255, 255, 255);
+  --bg-maint: rgb(255, 255, 255, 0.5);
+  --bg-soft100: rgba(0, 0, 0, 0.04);
+  --bg-soft200:  rgba(0, 0, 0, 0.08);
+  --bg-soft300:  rgba(0, 0, 0, 0.15);
+
+  /* Text Color */
+  --text-prim: rgb(20, 20, 20);
+  --text-soft200: rgb(50, 50, 50);
+  --text-soft100:rgb(150, 150, 150);
+}
+
+[data-theme='dark'] {
+  --background-color: rgb(20, 20, 20);
+  --headerBackground: rgba(20, 20, 20, 0.75);
+
+  --bg-main: rgb(20, 20, 20);
+  --bg-maint: rgb(20, 20, 20, 0.5);
+  --bg-soft100: rgba(255, 255, 255, 0.04);
+  --bg-soft200:  rgba(255, 255, 255, 0.08);
+  --bg-soft300: rgba(255, 255, 255, 0.15);
+
+  --text-prim: rgb(224, 224, 224);
+  --text-soft200: rgba(202, 202, 202, 0.663);
+  --text-soft100: rgba(193, 193, 193, 0.356);
 }
 
 @media (prefers-color-scheme: dark) {

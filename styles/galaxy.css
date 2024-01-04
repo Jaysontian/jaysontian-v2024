@@ -4,13 +4,13 @@
     z-index:1;
     margin:4rem 2rem;
     bottom:-25vh;
-    overflow: hidden;
     height:500px;
     width:calc(100% - 4rem);
     filter:blur(0rem) saturate(1.4);
-    border-radius:16px;
     min-height:500px;
     transition : all 200ms cubic-bezier(.23,.65,1,1);
+    overflow: hidden;
+    border-radius:16px;
 }
 
 @media screen and (max-width: 760px) {
@@ -45,6 +45,7 @@
     max-width:1000px;
     margin:auto;
     overflow:hidden;
+    border-radius:16px;
 }
 
 .galaxy-frame {

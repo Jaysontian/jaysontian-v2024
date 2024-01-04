@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Providers } from '@/lib/providers'
 import '@/styles/globals.css'
 import Header from '@/components/header'
 const inter = Inter({ subsets: ['latin'] })
-import { Fragment } from "react"
+
+
 
 
 export const metadata: Metadata = {
@@ -17,15 +19,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <body className={inter.className}>
-        <div className='my-12'></div>
-        <Header />
-        {children}
-      </body>
+      <Providers>
+          <body className={inter.className}>
+            <div className='my-12'></div>
+            <Header />
+            {children}
+          </body>
+      </Providers>
     </html>
   )
 }

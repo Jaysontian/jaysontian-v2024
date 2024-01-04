@@ -10,9 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "var(--sand1)",
-        secondary: "var(--sand4)",
-        tertiary: "var(--sand3)",
+        main: "var(--bg-main)",
+        maint: "var(--bg-maint)",
+        soft100: "var(--bg-soft100)",
+        soft200: "var(--bg-soft200)",
+        soft300: "var(--bg-soft300)",
         blur: "var(--blurBackground)",
         header: "var(--headerBackground)",
         linkHover: "var(--link-hover)",
@@ -23,12 +25,17 @@ const config: Config = {
         md: '13pt',
       },
       textColor: {
-        primary: "var(--color-text-primary)",
+        prim: "var(--text-prim)",
+        soft100: "var(--text-soft100)",
+        soft200: "var(--text-soft200)",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      borderColor: {
+        soft100: "var(--bg-soft100)",
       },
       scale: {
         '105': '1.01',

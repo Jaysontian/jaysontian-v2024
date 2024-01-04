@@ -6,14 +6,14 @@
 export default function Window(props : any){
     return(
         <div className="flex flex-col w-full gap-10">
-            <div className="w-full h-[500px] bg-white/60 rounded-lg border border-stone-300/75 shadow-xl transition overflow-hidden">
-                <div className="bg-stone-200/50 py-2.5 px-4 flex justify-between items-center">
+            <div className="w-full h-[500px] bg-maint rounded-lg border border-white/20 shadow-xl transition overflow-hidden">
+                <div className="bg-soft100 py-2.5 px-4 flex justify-between items-center">
                     <div className="flex">
                         <div className="w-3 h-3 bg-red-300 rounded-full mr-1.5"></div>
                         <div className="w-3 h-3 bg-yellow-300 rounded-full mr-1.5"></div>
                         <div className="w-3 h-3 bg-green-300 rounded-full mr-1.5"></div>
                     </div>
-                    <div className="bg-stone-200 w-3/5 py-1 text-xs text-stone-500 rounded-md text-center">
+                    <div className="bg-soft200 w-3/5 py-1 text-xs text-soft200 rounded-md text-center">
                         {props.url ? <a href={props.url}>{props.url}</a>: props.name}
                     </div>
                     <div className="w-12"></div>

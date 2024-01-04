@@ -65,27 +65,29 @@ export default function Galaxy() {
     }
 
     return(
-        <div className={`galaxy ${blur}`}>
-            <div className="galaxy-con">
-                <div className="galaxy-frame">
-                    <motion.div initial={false} className="layer baselayer">
-                        <Image src={layer1} alt="Layer 1 of Star Drawing"></Image>
-                    </motion.div>
-                    <motion.div initial={false} data-speed="6" className="layer">
-                        <Image src={layer2} alt="Layer 2 of Star Drawing"></Image>
-                    </motion.div>
-                    <motion.div initial={false} data-speed="-15" className="layer">
-                        <Image src={layer3} alt="Layer 2 of Star Drawing"></Image>
-                    </motion.div>
-                    <motion.div initial={false} data-speed="24" className="layer">
-                        <Image src={layer4} alt="Layer 2 of Star Drawing"></Image>
-                    </motion.div>
-                    <motion.div initial={false} className="lighten layer">
-                        <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
-                    </motion.div>
-                </div>
+        <motion.div>
+            <div className={`galaxy ${blur}`}>
+                <motion.div className="galaxy-con" initial={{opacity: 0, y: 100, scale:0.7}} animate={{opacity: 1, y: 0, scale:1}} transition={{ duration: 0.8 }}>
+                    <div className="galaxy-frame">
+                        <motion.div initial={false} className="layer baselayer">
+                            <Image src={layer1} alt="Layer 1 of Star Drawing"></Image>
+                        </motion.div>
+                        <motion.div initial={false} data-speed="6" className="layer">
+                            <Image src={layer2} alt="Layer 2 of Star Drawing"></Image>
+                        </motion.div>
+                        <motion.div initial={false} data-speed="-15" className="layer">
+                            <Image src={layer3} alt="Layer 2 of Star Drawing"></Image>
+                        </motion.div>
+                        <motion.div initial={false} data-speed="24" className="layer">
+                            <Image src={layer4} alt="Layer 2 of Star Drawing"></Image>
+                        </motion.div>
+                        <motion.div initial={false} className="lighten layer">
+                            <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
+                        </motion.div>
+                    </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 
 
