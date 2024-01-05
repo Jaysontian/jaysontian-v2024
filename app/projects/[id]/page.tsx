@@ -75,7 +75,7 @@ const renderBlock = (block : any) => {
       return (
         <figure>
           <img src={src} />
-          {/* {caption && <figcaption>{caption}</figcaption>} */}
+          {caption && <figcaption className='text-[10.5pt] text-center max-w-[400px] m-auto text-[gray] -mt-4'>{caption}</figcaption>}
         </figure>
       );
     default:

@@ -11,12 +11,26 @@
   padding-bottom:0.2rem;
 }
 
-.proj-page p, .proj-page li {
+.proj-page p{
   font-size: 11pt;
   font-weight: 400;
   margin: 1.2rem auto;
   line-height:23px;
 }
+
+
+.proj-page li{
+  font-size: 11pt;
+  font-weight: 400;
+  margin: 0.2rem auto;
+  line-height:23px;
+
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: -1.3em;
+  padding-left: 1.3em;
+}
+
 
 .proj-page figure, .proj-page img {
   width:85%;
