@@ -73,6 +73,7 @@ h2 {
 
 p {
   font-size:11pt;
+  line-height:23px;
   color: var(--text-primary-soft);
 }
 

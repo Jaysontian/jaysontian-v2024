@@ -12,10 +12,10 @@ export default async function Page({ params } : { params : any}){
     return(<>
         <main className='py-6 text-prim'>
             <h2 className="text-center">Work</h2>
-            <p className="text-sm/5">I am currently working on a side venture called Nebulo along with my studies. In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
+            <p className="text-sm">I am currently working on a side venture called Nebulo along with my studies. In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
             <PageList db={works} />
             <h2 className="text-center mt-8">Projects</h2>
-            <p className="text-sm/5">I enjoy hacking on the side.</p>
+            <p className="text-sm">I enjoy hacking on the side.</p>
             <PageList db={projects} />
         </main>
     </>)
