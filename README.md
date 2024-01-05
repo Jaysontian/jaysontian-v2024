@@ -1,6 +1,6 @@
 # jaysontian.com
 
-My personal website / portfolio – v2024
+My personal website 2024 version.
 
 ## Stack
 - Next.js
