@@ -18,9 +18,11 @@ export default function Window(props : any){
                     </div>
                     <div className="w-12"></div>
                 </div>
-                <div className="flex flex-col h-4/5 p-4 items-center gap-4">
+                <div className="flex flex-col h-5/6 p-4 items-center gap-4">
                     {props.img == null ? null :
-                        <img alt={props.name} className="w-full h-4/5 object-cover rounded-md" src={props.img}></img>
+                        <div className="w-full h-4/5 bg-soft100 overflow-hidden rounded-md py-8">
+                            <img className='object-cover h-full m-auto' alt={props.name} src={props.img}></img>
+                        </div>
                     }
                     <div className='flex w-3/5 gap-2 justify-between items-center py-2'>
                         <div>
