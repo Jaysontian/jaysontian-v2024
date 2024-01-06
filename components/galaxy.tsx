@@ -12,6 +12,8 @@ import layer5 from "/assets/layer5.webp";
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+// TODO: make galaxy collapse behind text
+
 export default function Galaxy() {
     //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
     const [blur, setBlur] = useState<String | null>('');
