@@ -17,6 +17,9 @@ import Image from 'next/image'
 export default function Galaxy() {
     //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
     const [blur, setBlur] = useState<String | null>('');
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+
     useEffect(() => {
         const blurCache = localStorage.getItem('blur') ? localStorage.getItem('blur') : '';
         setBlur(blurCache);
@@ -67,9 +70,15 @@ export default function Galaxy() {
     }
 
     return(
-        <motion.div>
+        <div className="galaxy-wrapper">
             <div className={`galaxy ${blur}`}>
-                <motion.div className="galaxy-con" initial={{opacity: 0, y: 100, scale:0.7}} animate={{opacity: 1, y: 0, scale:1}} transition={{ duration: 0.8 }}>
+                <motion.div 
+                    className="galaxy-con" 
+                    initial={{opacity: 0, y: 100}} 
+                    animate={{opacity: imageLoaded ? 0 : 1, y: imageLoaded ? 100 : 0}} 
+                    transition={{ duration: 0.8 }}
+                    onLoad={()=>{setImageLoaded(true);}}
+                >
                     <div className="galaxy-frame">
                         <motion.div initial={false} className="layer baselayer">
                             <Image src={layer1} alt="Layer 1 of Star Drawing"></Image>
@@ -83,13 +92,13 @@ export default function Galaxy() {
                         <motion.div initial={false} data-speed="24" className="layer">
                             <Image src={layer4} alt="Layer 2 of Star Drawing"></Image>
                         </motion.div>
-                        <motion.div initial={false} className="lighten layer">
+                        {/* <motion.div initial={false} className="lighten layer">
                             <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                 </motion.div>
             </div>
-        </motion.div>
+        </div>
     )
 
 

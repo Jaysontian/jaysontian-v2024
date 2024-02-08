@@ -82,6 +82,27 @@ export default function Carousel(props : any){
                             </div>
                         </div>
                     ))}
+
+                    {/* DOUBLE LOOP IT TO PREVENT ERRORS */}
+                    {props.data.map((project : any, index : number)=>(
+                        <div className="embla__slide" key={project.id + '-other'}>
+                            <div
+                            style={{
+                                ...(tweenValues.length && {
+                                    transform: `scale(${tweenValues[index + tweenValues.length/2]})`,
+                                    opacity: tweenValues[index + tweenValues.length/2] < 0.85 ? 0.3 : tweenValues[index + tweenValues.length/2],
+                                })
+                            }}>
+                                <Window 
+                                name={project.properties.Name.title[0].plain_text} 
+                                desc={project.properties.Desc.rich_text[0].plain_text}
+                                url={project.properties.URL.url}
+                                href={`/projects/${project.id}`}
+                                img={project.properties.Image.url}
+                                />
+                            </div>
+                        </div>
+                    ))}
                 </motion.div>
                 <button className="embla__prev absolute left-12 mt-[-300px]" onClick={scrollPrev}><IconArrowLeft /></button>
                 <button className="embla__next absolute right-12 mt-[-300px]" onClick={scrollNext}><IconArrowRight /></button>
