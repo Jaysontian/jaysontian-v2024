@@ -12,7 +12,6 @@ import layer5 from "/assets/layer5.webp";
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-// TODO: make galaxy collapse behind text
 
 export default function Galaxy() {
     //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
@@ -74,12 +73,12 @@ export default function Galaxy() {
             <div className={`galaxy ${blur}`}>
                 <motion.div 
                     className="galaxy-con" 
-                    initial={{opacity: 0, y: 100}} 
+                    initial={{opacity: 0, y: 100}}
                     animate={{opacity: imageLoaded ? 0 : 1, y: imageLoaded ? 100 : 0}} 
                     transition={{ duration: 0.8 }}
-                    onLoad={()=>{setImageLoaded(true);}}
+                    
                 >
-                    <div className="galaxy-frame">
+                    <div className="galaxy-frame" onLoad={()=>{setImageLoaded(true);}}>
                         <motion.div initial={false} className="layer baselayer">
                             <Image src={layer1} alt="Layer 1 of Star Drawing"></Image>
                         </motion.div>
