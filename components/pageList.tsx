@@ -39,7 +39,7 @@ export default function pageList(props : any){
                 return (
                     <motion.li 
                         key={post.id} 
-                        className='border-b border-soft100 last:border-b-0 py-1'
+                        className=' last:border-b-0 py-0.5'
                         variants={item}
                         >
                         <PageLink name={post.properties.Name.title} id={post.id} icon={icon} desc={desc} emoji={emoji}/>
