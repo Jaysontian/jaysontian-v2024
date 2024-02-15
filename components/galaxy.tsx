@@ -72,7 +72,7 @@ export default function Galaxy() {
     }
 
     return(
-        <div className="galaxy-wrapper">
+        <div className="galaxy-wrapper select-none">
             <div className={`galaxy ${blur}`}>
                 <motion.div 
                     className="galaxy-con" 

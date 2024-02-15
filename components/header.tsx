@@ -4,9 +4,9 @@ import NavLink from '@/components/navlink'
 import ThemePicker from '@/components/themePicker'
 
 const links = [
-    {label: 'home', href: '/'},
-    {label: 'about', href: '/about'},
-    {label: 'portfolio', href: '/projects'},
+    {label: 'Home', href: '/'},
+    {label: 'About', href: '/about'},
+    {label: 'Portfolio', href: '/projects'},
 ]
 
 export default function Header() {
@@ -41,8 +41,8 @@ export default function Header() {
     }
 
     return(
-        <header className="sticky top-0 z-20 main-header backdrop-blur-md bg-header ">
-            <nav className="md:px-2 py-4 max-w-[600px] mx-auto flex justify justify-between items-center">
+        <motion.header initial={{opacity: 0}} animate={{opacity:1}} className="sticky top-2 z-20 main-header backdrop-blur-md bg-header border-[1px] border-soft300 border-opacity-10">
+            <nav className="md:px-4 py-4 max-w-[600px] mx-auto flex justify justify-between items-center">
                 <div></div>
                 <motion.ul 
                     className="flex justify-between gap-4 text-sm" 
@@ -62,6 +62,6 @@ export default function Header() {
                 </motion.ul>
                 <ThemePicker />
             </nav>
-        </header>
+        </motion.header>
     );
 }

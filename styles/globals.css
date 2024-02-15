@@ -61,7 +61,9 @@ main > :not(img, video, figure) {
 }
 
 header {
-  width:100vw!important;
+  max-width:600px;
+  margin:auto;
+  border-radius:100px;
 }
 
 h2 {

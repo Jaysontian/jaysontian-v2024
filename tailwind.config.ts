@@ -19,6 +19,9 @@ const config: Config = {
         header: "var(--headerBackground)",
         linkHover: "var(--link-hover)",
       },
+      colors: {
+        soft300: "var(--bg-soft300)",
+      },
       fontSize: {
         sm: '11pt',
         base: '12pt',
