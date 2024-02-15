@@ -1,7 +1,7 @@
 'use client'
 
 import '@/styles/galaxy.css'
-import { useState, useEffect, useCallback} from 'react'
+import { useState, useEffect, useCallback, useRef} from 'react'
 
 import layer1 from "@/assets/layer1.webp";
 import layer2 from "/assets/layer2.webp";
@@ -11,13 +11,16 @@ import layer5 from "/assets/layer5.webp";
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useOnLoadImages } from '@/lib/useOnLoadImages';
 
 
 export default function Galaxy() {
-    //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
-    const [blur, setBlur] = useState<String | null>('');
-    const [imageLoaded, setImageLoaded] = useState(false);
+    // const wrapperRefHTML = useRef<HTMLDivElement>(null);
+    // const imagesLoaded = useOnLoadImages(wrapperRefHTML);
 
+    //const blurCache = typeof localStorage.getItem('blur') !== "undefined" ? localStorage.getItem('blur') : null;
+    const [blur, setBlur] = useState<string | null>('');
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
         const blurCache = localStorage.getItem('blur') ? localStorage.getItem('blur') : '';
@@ -73,23 +76,22 @@ export default function Galaxy() {
             <div className={`galaxy ${blur}`}>
                 <motion.div 
                     className="galaxy-con" 
-                    initial={{opacity: 0, y: 100}}
-                    animate={{opacity: imageLoaded ? 0 : 1, y: imageLoaded ? 100 : 0}} 
+                    initial={{opacity: 0, y: 50}}
+                    animate={{opacity: imageLoaded ? 1 : 0, y: imageLoaded ? 0 : 100}} 
                     transition={{ duration: 0.8 }}
-                    
                 >
-                    <div className="galaxy-frame" onLoad={()=>{setImageLoaded(true);}}>
+                    <div className="galaxy-frame">
                         <motion.div initial={false} className="layer baselayer">
-                            <Image src={layer1} alt="Layer 1 of Star Drawing"></Image>
+                            <Image src={layer1} alt="Layer 1 of Star Drawing" className="image" onLoad={()=>{setImageLoaded(true)}}></Image>
                         </motion.div>
-                        <motion.div initial={false} data-speed="6" className="layer">
-                            <Image src={layer2} alt="Layer 2 of Star Drawing"></Image>
+                        <motion.div initial={{opacity:0}} animate={{opacity:1}} data-speed="6" className="layer">
+                            <Image src={layer2} alt="Layer 2 of Star Drawing" className="image"></Image>
                         </motion.div>
-                        <motion.div initial={false} data-speed="-15" className="layer">
-                            <Image src={layer3} alt="Layer 2 of Star Drawing"></Image>
+                        <motion.div initial={{opacity:0}} animate={{opacity:1}} data-speed="-15" className="layer">
+                            <Image src={layer3} alt="Layer 2 of Star Drawing" className="image"></Image>
                         </motion.div>
-                        <motion.div initial={false} data-speed="24" className="layer">
-                            <Image src={layer4} alt="Layer 2 of Star Drawing"></Image>
+                        <motion.div initial={{opacity:0}} animate={{opacity:1}} data-speed="24" className="layer">
+                            <Image src={layer4} alt="Layer 2 of Star Drawing" className="image"></Image>
                         </motion.div>
                         {/* <motion.div initial={false} className="lighten layer">
                             <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
