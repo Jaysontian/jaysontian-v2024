@@ -16,3 +16,8 @@ My personal website 2024 version.
 ## Preview
 ![](https://i.imgur.com/nBA9Dmw.jpg)
 
+
+## TODO
+- [ ] Fix scrolling lag
+- [ ] Add modal for theme picker
+
