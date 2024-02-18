@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { getDatabase, getPage, getBlocks } from "@/lib/notion";
 import { Text } from '@/app/projects/[id]/text'
+import { Metadata, ResolvingMetadata } from 'next'
+ 
 
 const databaseId = process.env.NOTION_DATABASE_ID
+
 
 export async function generateStaticParams() {
   const database = await getDatabase(databaseId, '');
@@ -84,6 +87,25 @@ const renderBlock = (block : any) => {
       })`;
   }
 };
+
+export async function generateMetadata(
+  { params }: {params: {id : string}},
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+  const page = await getPage(id);
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: page.properties.Name.title[0].text.content,
+    openGraph: {
+      images: [...previousImages],
+    },
+  }
+}
 
 
 export default async function Page({ params } : {params: {id : string}}) {

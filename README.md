@@ -18,6 +18,7 @@ My personal website 2024 version.
 
 
 ## TODO
+- [x] Blurring issue
 - [ ] Fix scrolling lag
 - [ ] Add modal for theme picker
 
