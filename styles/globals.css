@@ -60,11 +60,42 @@ main > :not(img, video, figure) {
   margin-right: auto;
 }
 
+
 header {
   max-width:600px;
   margin:auto;
-  border-radius:100px;
+
+	transition: transform 0.25s;
+	position: relative;
+	z-index: 1;
 }
+
+header::after {
+  border: 1px solid var(--bg-soft300);
+  border-radius:100px;
+	content: '';
+  transition: transform cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+header:hover::after {
+	transform: scale(1.02);
+}
+
+.link {
+  transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+}
+.link:hover {
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:26px;
+  padding-right:26px;
+}
+
+
+
 
 h2 {
   font-size:12pt;

@@ -17,7 +17,7 @@ export default function NavLink({href, children} : NavLinkProps) {
     const style = active ? "px-4 py-2 rounded-full bg-soft100 transition text-prim" : "px-4 py-2 rounded-full transition text-soft200";
 
     return(
-        <Link className={cn(style, " hover:text-prim")}  href={href}>{children}</Link>
+        <Link className={cn(style, " hover:text-prim link")}  href={href}>{children}</Link>
     );
 
 }
