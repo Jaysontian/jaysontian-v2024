@@ -40,9 +40,9 @@ export default function Header() {
     }
 
     return(
-        <motion.header initial={{opacity: 0}} animate={{opacity:1}} className="w-fit md:w-auto sticky top-2 z-20 main-header backdrop-blur-md bg-header px-4">
+        <motion.header initial={{opacity: 0}} animate={{opacity:1}} className="w-full md:w-auto sticky top-2 z-20 main-header backdrop-blur-md bg-header px-4">
             <nav className="md:mx-0 py-3 max-w-[600px] mx-auto flex justify justify-between items-center">
-                <div></div>
+                <div className="hidden md:block"></div>
                 <motion.ul 
                     className="flex justify-between gap-4 text-sm" 
                     initial="hidden"

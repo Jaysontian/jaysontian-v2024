@@ -15,7 +15,7 @@ export default function pageLink(props : any){
                     <Text text={props.name} />
                     <div className='opacity-25'><IconArrowUpRight size={16} /></div>
                 </div>
-                <p className='text-sm text-soft100'>{props.desc}</p>
+                <p className='text-sm text-soft100 hidden md:block'>{props.desc}</p>
             </div>
         </Link>
     )

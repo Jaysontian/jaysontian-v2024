@@ -59,6 +59,7 @@ export default function Carousel(props : any){
                     animate={{ opacity: 1 }}
                     transition={{duration: 0.6, delay: 0.5}}>
             <h2 className="mt-64 text-center text-md">Featured Work</h2>
+            <div className="text-sm text-prim text-center max-w-70 opacity-50">View my recently featured work by dragging horizontally</div>
             <div className="embla" ref={emblaRef}>
                 <motion.div 
                     className="embla__container"
