@@ -21,7 +21,7 @@ export default async function Page({ params } : { params : any}){
             <PageList db={works} />
             <h2 className="text-left mt-8">Projects</h2>
             <p className="text-sm">I enjoy hacking, building, and designing on the side.</p>
-            <PageList db={projects} />
+            <PageList db={projects} /> 
         </main>
     </>)
 }
