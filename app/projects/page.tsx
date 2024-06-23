@@ -16,7 +16,7 @@ export default async function Page({ params } : { params : any}){
             <p className="text-sm">
                 I have experience in product and venture. 
                 Currently a PM Intern at Paramount,
-                Scouting for Soma Capital, and building two side ventures.
+                Scout for Soma Capital, and building two side ventures.
                 In the past I have worked with Tim Wihaya on Skilldeck, and founded a NGO organization.</p>
             <PageList db={works} />
             <h2 className="text-left mt-8">Projects</h2>
