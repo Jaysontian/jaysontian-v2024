@@ -17,6 +17,7 @@ export async function generateStaticParams() {
 const renderBlock = (block : any) => {
   const { type, id } = block;
   const value = block[type];
+  // console.log(type);
 
   switch (type) {
     case "paragraph":
@@ -78,7 +79,7 @@ const renderBlock = (block : any) => {
       return (
         <figure>
           <img src={src} />
-          {caption && <figcaption className='text-[10.5pt] text-center max-w-[400px] m-auto text-[gray] -mt-4'>{caption}</figcaption>}
+          {caption && <figcaption className='text-[10.5pt] text-center max-w-[450px] m-auto text-[gray] -mt-4'>{caption}</figcaption>}
         </figure>
       );
     default:
@@ -136,6 +137,7 @@ export default async function Page({ params } : {params: {id : string}}) {
     if (!page || !blocks) {
         return <div />;
     }
+    console.log(blocks.length);
     return (
         <main className="proj-page text-prim mb-24">
             <div className="my-10">
