@@ -89,10 +89,7 @@ header:hover::after {
   transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
 }
 .link:hover {
-  padding-top:12px;
-  padding-bottom:12px;
-  padding-left:26px;
-  padding-right:26px;
+  /* Removed padding changes */
 }
 
 

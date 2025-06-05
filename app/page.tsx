@@ -1,6 +1,8 @@
 import { getDatabase } from '@/lib/notion'
 import Galaxy from '@/components/galaxy'
 import Carousel from '@/components/carousel'
+import Stars from '@/components/stars'
+
 
 // Home page
 let databaseId:string = process.env.NOTION_DATABASE_ID ?? '';
@@ -11,6 +13,7 @@ export default async function Page() {
 
   return (
     <>
+      <Stars />
       <Galaxy />
       <main className="text-prim flex flex-col items-center antialiased font-medium md:gap-4">
         <div className="flex flex-row h-[calc(100vh-8rem)] w-[80vw] md:w-[650px] items-center align-middle">
