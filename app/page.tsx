@@ -15,7 +15,7 @@ export default async function Page() {
     <>
       <Stars />
       <Galaxy />
-      <main className="text-prim flex flex-col items-center antialiased font-medium md:gap-4">
+      <main className="landing-page text-prim flex flex-col items-center antialiased font-medium md:gap-4">
         <div className="flex flex-row h-[calc(100vh-8rem)] w-[80vw] md:w-[650px] items-center align-middle">
           <p className='text-white text-[13pt] leading-[1.5] pb-[16vh] select-none'>Hi! I'm Jayson Tian. I'm a software and interface engineer, designer, and caffeine geek. I particularly enjoy exploring the intersection between product, venture, and the nuances of what makes a product practical and disruptive. I'm currently studying Computer Science at UCLA.</p>
         </div>

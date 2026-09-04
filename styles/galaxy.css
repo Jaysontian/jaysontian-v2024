@@ -6,7 +6,7 @@
 
 .galaxy {
     position:fixed;
-    z-index:-1;
+    z-index:0;
     margin:4rem 2rem;
     min-height:400px;
     height:60vh;
@@ -46,8 +46,13 @@
     border-radius:400px;
 }
 
+[data-theme='light'] .galaxy.blurred {
+    transform: scale(2.25);
+}
+
 .galaxy-con {
     display: flex;
+    position: relative;
     width:100%;
     height: 100%;
     align-items: center;
@@ -60,6 +65,26 @@
     border:1px solid rgba(179, 179, 179, 0.05);
 }
 
+.galaxy-caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+    transition: opacity 160ms ease;
+}
+
+.galaxy-caption:hover,
+.galaxy-caption:focus-visible {
+    opacity: 1;
+}
+
 .galaxy-frame {
   margin: auto;
   align-self: center;
@@ -70,6 +95,7 @@
   min-width: 100%;
   min-height: 150%;
   background-color:black;
+  pointer-events: none;
 }
 
 .galaxy-frame > div{
@@ -99,4 +125,3 @@
   mix-blend-mode: color-dodge;
   
 }
-

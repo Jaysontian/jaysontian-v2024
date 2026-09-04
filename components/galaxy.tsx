@@ -11,6 +11,7 @@ import layer5 from "/assets/layer5.webp";
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useOnLoadImages } from '@/lib/useOnLoadImages';
 
 
@@ -97,6 +98,12 @@ export default function Galaxy() {
                             <Image src={layer5} alt="Layer 2 of Star Drawing"></Image>
                         </motion.div> */}
                     </div>
+                    <Link
+                        className="galaxy-caption"
+                        href="/projects/c0091a5c-7b79-4377-a317-e827a1b425c9"
+                    >
+                        How I made this in Procreate
+                    </Link>
                 </motion.div>
             </div>
         </div>

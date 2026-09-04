@@ -1,4 +1,26 @@
 
+[data-theme] .landing-page {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.landing-page .carousel-con {
+  pointer-events: auto;
+}
+
+[data-theme='light'] .landing-page,
+[data-theme='light'] .landing-page *,
+[data-theme='light'] body:has(.landing-page) footer,
+[data-theme='light'] body:has(.landing-page) footer * {
+  color: white !important;
+}
+
+body:has(.landing-page) footer {
+  position: relative;
+  z-index: 1;
+}
+
 
 .proj-page > :not(figure, image, video){
   max-width:500px;
